@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="margin-top: 70px;">
+    <h1>日志详情</h1>
+
+    <div class="card">
+        <div class="card-header">
+            <strong>时间:</strong> {{ log.logtime }}
+        </div>
+        <div class="card-body">
+            <p><strong>日志类型:</strong> {{ log.logtype }}</p>
+            <p><strong>日志内容:</strong></p>
+            <div style="white-space: pre-wrap;">{{ log.logcontent }}</div>
+        </div>
+    </div>
+
+    <a href="{{ url_for('log_query') }}" class="btn btn-primary" style="margin-top: 20px;">返回日志查询</a>
+</div>
+{% endblock %}

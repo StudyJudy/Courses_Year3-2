@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <h3>源代码</h3>
+        <pre><code>{{ source_code }}</code></pre>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Error 输出</h3>
+                {% if errors %}
+                {% for error in errors %}
+                <div class="alert alert-danger" role="alert">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th>NO</th>
+                                <td>{{ error.NO }}</td>
+                            </tr>
+                            <tr>
+                                <th>文件名称</th>
+                                <td>{{ error.文件名称 }}</td>
+                            </tr>
+                            <tr>
+                                <th>报告类型</th>
+                                <td>{{ error.报告类型 }}</td>
+                            </tr>
+                            <tr>
+                                <th>问题描述</th>
+                                <td>{{ error.问题描述 }}</td>
+                            </tr>
+                            <tr>
+                                <th>错误位置</th>
+                                <td>{{ error.错误位置 }}</td>
+                            </tr>
+                            <tr>
+                                <th>问题类型</th>
+                                <td>{{ error.问题类型 }}</td>
+                            </tr>
+                            <tr>
+                                <th>问题严重性</th>
+                                <td>{{ error.问题严重性 }}</td>
+                            </tr>
+                            <tr>
+                                <th>可能的后果</th>
+                                <td>{{ error.可能的后果 }}</td>
+                            </tr>
+                            <tr>
+                                <th>修复建议</th>
+                                <td>{{ error.修复建议 }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="alert alert-info" role="alert">
+                    没有发现任何错误。
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Warning 输出</h3>
+                {% if warnings %}
+                {% for warning in warnings %}
+                <div class="alert alert-warning" role="alert">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th>NO</th>
+                                <td>{{ warning.NO }}</td>
+                            </tr>
+                            <tr>
+                                <th>文件名称</th>
+                                <td>{{ warning.文件名称 }}</td>
+                            </tr>
+                            <tr>
+                                <th>报告类型</th>
+                                <td>{{ warning.报告类型 }}</td>
+                            </tr>
+                            <tr>
+                                <th>问题描述</th>
+                                <td>{{ warning.问题描述 }}</td>
+                            </tr>
+                            <tr>
+                                <th>错误位置</th>
+                                <td>{{ warning.错误位置 }}</td>
+                            </tr>
+                            <tr>
+                                <th>问题类型</th>
+                                <td>{{ warning.问题类型 }}</td>
+                            </tr>
+                            <tr>
+                                <th>问题严重性</th>
+                                <td>{{ warning.问题严重性 }}</td>
+                            </tr>
+                            <tr>
+                                <th>可能的后果</th>
+                                <td>{{ warning.可能的后果 }}</td>
+                            </tr>
+                            <tr>
+                                <th>修复建议</th>
+                                <td>{{ warning.修复建议 }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="alert alert-info" role="alert">
+                    没有发现任何警告。
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

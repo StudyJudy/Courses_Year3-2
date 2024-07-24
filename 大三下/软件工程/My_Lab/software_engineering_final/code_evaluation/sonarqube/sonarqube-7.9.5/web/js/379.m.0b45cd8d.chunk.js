@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[379],{1656:function(e,n,r){"use strict";r.r(n),r.d(n,"ProjectOnboardingPage",function(){return c});var t=r(365),o=r(371);class c extends t.PureComponent{componentDidMount(){this.props.router.replace("/projects/create")}render(){return null}}n.default=Object(o.withRouter)(c)}}]);
+//# sourceMappingURL=379.m.0b45cd8d.chunk.js.map

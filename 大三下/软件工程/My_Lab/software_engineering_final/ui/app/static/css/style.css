@@ -1,0 +1,19 @@
+body {
+    padding-top: 70px;  /* 确保内容不会被固定的导航栏遮挡 */
+    padding-bottom: 50px;  /* 确保内容不会被固定的页脚遮挡 */
+}
+
+.navbar-brand, .nav-link.btn {
+    color: #fff !important;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}

@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">欢迎使用运维管理平台</h1>
+    <p class="lead">使用我们的工具进行代码审查、故障预测等操作，高效管理您的运维工作。</p>
+    <hr class="my-4">
+    <p>请使用以下按钮访问不同模块：</p>
+    <div class="row no-gutters">
+        <div id="carouselContainer" class="col-md-12 d-flex justify-content-between">
+            <div id="carousel1" class="carousel slide col-md-4" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">代码审查</h5>
+                                <p class="card-text">高效地审查和改进您的代码。</p>
+                                <a href="{{ url_for('code_review') }}" class="btn btn-primary">进入代码审查</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">故障预测</h5>
+                                <p class="card-text">在故障发生之前预测并做好准备。</p>
+                                <a href="{{ url_for('fault_prediction') }}" class="btn btn-primary">进入故障预测</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">日志查询</h5>
+                                <p class="card-text">查询和分析您的日志信息。</p>
+                                <a href="{{ url_for('log_query') }}" class="btn btn-primary">进入日志查询</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">代码评估</h5>
+                                <p class="card-text">评估和优化您的代码质量。</p>
+                                <a href="{{ url_for('code_evaluation') }}" class="btn btn-primary">进入代码评估</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">故障预测</h5>
+                                <p class="card-text">在故障发生之前预测并做好准备。</p>
+                                <a href="{{ url_for('fault_prediction') }}" class="btn btn-primary">进入故障预测</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="carousel2" class="carousel slide col-md-4" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">故障预测</h5>
+                                <p class="card-text">在故障发生之前预测并做好准备。</p>
+                                <a href="{{ url_for('fault_prediction') }}" class="btn btn-primary">进入故障预测</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">日志查询</h5>
+                                <p class="card-text">查询和分析您的日志信息。</p>
+                                <a href="{{ url_for('log_query') }}" class="btn btn-primary">进入日志查询</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">代码评估</h5>
+                                <p class="card-text">评估和优化您的代码质量。</p>
+                                <a href="{{ url_for('code_evaluation') }}" class="btn btn-primary">进入代码评估</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">代码审查</h5>
+                                <p class="card-text">高效地审查和改进您的代码。</p>
+                                <a href="{{ url_for('code_review') }}" class="btn btn-primary">进入代码审查</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">故障预测</h5>
+                                <p class="card-text">在故障发生之前预测并做好准备。</p>
+                                <a href="{{ url_for('fault_prediction') }}" class="btn btn-primary">进入故障预测</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="carousel3" class="carousel slide col-md-4" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">日志查询</h5>
+                                <p class="card-text">查询和分析您的日志信息。</p>
+                                <a href="{{ url_for('log_query') }}" class="btn btn-primary">进入日志查询</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">代码评估</h5>
+                                <p class="card-text">评估和优化您的代码质量。</p>
+                                <a href="{{ url_for('code_evaluation') }}" class="btn btn-primary">进入代码评估</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">代码审查</h5>
+                                <p class="card-text">高效地审查和改进您的代码。</p>
+                                <a href="{{ url_for('code_review') }}" class="btn btn-primary">进入代码审查</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">故障预测</h5>
+                                <p class="card-text">在故障发生之前预测并做好准备。</p>
+                                <a href="{{ url_for('fault_prediction') }}" class="btn btn-primary">进入故障预测</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">日志查询</h5>
+                                <p class="card-text">查询和分析您的日志信息。</p>
+                                <a href="{{ url_for('log_query') }}" class="btn btn-primary">进入日志查询</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const carousels = ['carousel1', 'carousel2', 'carousel3'];
+
+    carousels.forEach(carouselId => {
+        const carouselElement = document.getElementById(carouselId);
+
+        carouselElement.addEventListener('mouseenter', () => {
+            carousels.forEach(id => $('#' + id).carousel('pause'));
+        });
+
+        carouselElement.addEventListener('mouseleave', () => {
+            carousels.forEach(id => $('#' + id).carousel('cycle'));
+        });
+    });
+</script>
+
+{% endblock %}

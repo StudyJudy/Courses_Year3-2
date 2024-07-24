@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container" style="margin-top: 70px;">
+        <h1>代码审查</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">上传代码文件：</label>
+                <input type="file" class="form-control-file" id="file" name="file" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">上传</button>
+                <button type="button" class="btn btn-info ml-2"
+                        onclick="location.href='{{ url_for('code_review_result') }}'"
+                        {% if not session.get('review_completed') %} disabled {% endif %}>
+                    查看报告
+                </button>
+            </div>
+        </form>
+
+        <hr>
+    </div>
+
+    <script>
+        // 保留上次会话中的文件名
+        document.addEventListener("DOMContentLoaded", function() {
+            const lastFileName = '{{ session.get("last_uploaded_file", "") }}';
+            if (lastFileName) {
+                const fileInput = document.getElementById('file');
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(new File([''], lastFileName));
+                fileInput.files = dataTransfer.files;
+            }
+        });
+    </script>
+{% endblock %}

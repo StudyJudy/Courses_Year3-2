@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block title %}主机状态{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <h2 class="mb-4">主机状态</h2>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    系统信息
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover">
+                        <tbody>
+                            <tr>
+                                <td>CPU 核心数</td>
+                                <td>{{ infoDict['cpu_count'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>CPU 供应商</td>
+                                <td>{{ infoDict['vendor_id'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>CPU 型号</td>
+                                <td>{{ infoDict['model_name'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>CPU 频率 (MHz)</td>
+                                <td>{{ infoDict['cpu_mhz'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>缓存大小 (KB)</td>
+                                <td>{{ infoDict['cache_size_kb'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>缓存对齐</td>
+                                <td>{{ infoDict['cache_alignment'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>内存总量 (MB)</td>
+                                <td>{{ infoDict['mem_total_kb'] // 1024 }}</td>
+                            </tr>
+                            <tr>
+                                <td>空闲内存 (MB)</td>
+                                <td>{{ infoDict['mem_free_kb'] // 1024 }}</td>
+                            </tr>
+                            <tr>
+                                <td>可用内存 (MB)</td>
+                                <td>{{ infoDict['mem_available_kb'] // 1024 }}</td>
+                            </tr>
+                            <tr>
+                                <td>系统运行时间</td>
+                                <td>{{ infoDict['uptime'] }} 秒</td>
+                            </tr>
+                            <tr>
+                                <td>空闲时间</td>
+                                <td>{{ infoDict['idle'] }} 秒</td>
+                            </tr>
+                            <tr>
+                                <td>使用率</td>
+                                <td>{{ infoDict['from_start_use_rate'] * 100 }}%</td>
+                            </tr>
+                            <tr>
+                                <td>电池状态</td>
+                                <td>{{ infoDict['batt_status'] }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    伙伴系统信息
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">内存块大小</th>
+                                <th scope="col">数量</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for key, value in infoDict['buddy_system_info'].items() %}
+                            <tr>
+                                <td>{{ key }}</td>
+                                <td>{{ value }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    集群状态
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">主机</th>
+                                <th scope="col">状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for host, status in infoDict['cluster_status'].items() %}
+                            <tr>
+                                <td>{{ host }}</td>
+                                <td>{{ status }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

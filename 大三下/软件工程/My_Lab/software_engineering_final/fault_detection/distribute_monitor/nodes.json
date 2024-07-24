@@ -1,0 +1,16 @@
+{
+    "nodes":{
+        "distribute001":{
+            "ip_addr": "127.0.0.1",
+            "port": "5820"
+        },
+        "distribute002":{
+            "ip_addr": "127.0.0.1",
+            "port": "5821"
+        },
+        "distribute003":{
+            "ip_addr": "127.0.0.1",
+            "port": "5822"
+        }
+    }
+}
