@@ -1,0 +1,3 @@
+使用.ipynb或.py均可，如使用jupyter可能运行速度较慢
+
+用到的数据集文件需存储在代码文件所在目录的Data-RecommandationSystem文件夹中。
