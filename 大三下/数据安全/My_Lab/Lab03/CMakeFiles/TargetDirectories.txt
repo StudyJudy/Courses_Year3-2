@@ -1,0 +1,3 @@
+/mnt/hgfs/ubuntu-share/Data-Security/My_Lab03/CMakeFiles/he.dir
+/mnt/hgfs/ubuntu-share/Data-Security/My_Lab03/CMakeFiles/edit_cache.dir
+/mnt/hgfs/ubuntu-share/Data-Security/My_Lab03/CMakeFiles/rebuild_cache.dir
